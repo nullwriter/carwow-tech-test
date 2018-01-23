@@ -1,5 +1,7 @@
 require_relative 'bitmap'
 require_relative 'custom_exceptions'
+require_relative 'draw_bitmap_command'
+require_relative 'fill_pixel_command'
 require 'pp'
 
 class BitmapEditor
@@ -11,8 +13,8 @@ class BitmapEditor
   end
 
   def run
-    @commands.each do |command, bitmap|
-      puts command
+    @commands.inject(nil) do |bitmap, command|
+      pp command.process(bitmap)
     end
   end
 
@@ -25,15 +27,15 @@ class BitmapEditor
 
       parts = line.strip.split
       cmd, *args = parts
-      @commands << (command_list[cmd] || raise(CommandNotFound))
+      @commands << (command_list[cmd].new(args) || raise(CommandNotFound))
     end
   end
 
   def command_list
     {
-      'I' => 'I',
+      'I' => DrawBitmapCommand,
       'C' => 'C',
-      'L' => 'L',
+      'L' => FillPixelCommand,
       'V' => 'V',
       'H' => 'H',
       'S' => 'S'

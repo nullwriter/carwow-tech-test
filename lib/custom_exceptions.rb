@@ -9,3 +9,9 @@ class BitmapCommandFileNotFound < StandardError
     super
   end
 end
+
+class OutOfBoundsPixel < StandardError
+  def initialize(msg="Bitmap command attemped to access a non existent pixel.")
+    super
+  end
+end
