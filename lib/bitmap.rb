@@ -19,7 +19,9 @@ class Bitmap
 
 	private
 
-	def create_bitmap()
-		Array.new(@rows, Array.new(@columns){ @default_colour })
+	def create_bitmap
+		Array.new(@rows) { 
+			Array.new(@columns){ @default_colour } 
+		}
 	end
 end
