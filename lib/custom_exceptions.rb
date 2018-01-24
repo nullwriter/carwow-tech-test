@@ -15,3 +15,15 @@ class OutOfBoundsPixel < StandardError
     super
   end
 end
+
+class IncompleteCommand < StandardError
+	def initialize(msg="Can't process an incomplete Bitmap command.")
+		super
+	end
+end
+
+class IncorrectParameter < StandardError
+	def initialize(msg="Incorrect type of parameter was found in the command.")
+		super
+	end
+end

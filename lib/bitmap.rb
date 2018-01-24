@@ -2,9 +2,11 @@ require_relative 'custom_exceptions'
 
 class Bitmap
 
+	attr_reader :columns, :rows, :bitmap
+
 	def initialize(columns, rows, colour = '0')
-		@columns = columns
-		@rows = rows
+		@columns = columns.to_i
+		@rows = rows.to_i
 		@default_colour = colour
 		@bitmap = create_bitmap
 	end
