@@ -3,6 +3,7 @@ require_relative 'custom_exceptions'
 require_relative 'draw_bitmap_command'
 require_relative 'fill_pixel_command'
 require_relative 'vertical_fill_command'
+require_relative 'horizontal_fill_command'
 require 'pp'
 
 class BitmapEditor
@@ -38,7 +39,7 @@ class BitmapEditor
       'C' => 'C',
       'L' => FillPixelCommand,
       'V' => VerticalFillCommand,
-      'H' => 'H',
+      'H' => HorizontalFillCommand,
       'S' => 'S'
     }
   end

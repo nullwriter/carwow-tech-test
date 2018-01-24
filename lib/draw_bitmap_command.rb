@@ -1,5 +1,5 @@
-require_relative "bitmap"
-require_relative "bitmap_command"
+require_relative 'bitmap'
+require_relative 'bitmap_command'
 
 class DrawBitmapCommand < BitmapCommand
 

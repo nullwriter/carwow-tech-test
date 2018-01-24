@@ -1,4 +1,4 @@
-require_relative "bitmap_command"
+require_relative 'bitmap_command'
 require_relative 'custom_exceptions'
 
 class FillPixelCommand < BitmapCommand
