@@ -5,8 +5,20 @@ class FillPixelCommand < BitmapCommand
 
 	def process(bitmap)
 		verify_parameters(bitmap)
-		bitmap[args[1], args[0]] = args[2]
+		bitmap[row, column] = colour
 		bitmap
+	end
+
+	def row
+		args[1]
+	end
+
+	def column
+		args[0]
+	end
+
+	def colour
+		args[2]
 	end
 
 	def verify_parameters(bitmap)

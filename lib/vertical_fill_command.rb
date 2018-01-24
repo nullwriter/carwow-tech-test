@@ -5,15 +5,28 @@ class VerticalFillCommand < BitmapCommand
 
 	def process(bitmap)
 		verify_parameters(bitmap)
-		column = args[0]
-		from_row = args[1]
-		to_row = args[2]
-		colour = args[3]
 
 		(from_row..to_row).each do |row|
 			FillPixelCommand.new([column, row, colour]).process(bitmap)
 		end
+		
 		bitmap
+	end
+
+	def column
+		args[0]
+	end
+
+	def from_row
+		args[1]
+	end
+
+	def to_row
+		args[2]
+	end
+
+	def colour
+		args[3]
 	end
 
 	def verify_parameters(bitmap)

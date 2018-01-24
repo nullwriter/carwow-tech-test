@@ -5,7 +5,15 @@ class DrawBitmapCommand < BitmapCommand
 
 	def process(bitmap)
 		verify_parameters
-		Bitmap.new(args[0].to_i, args[1].to_i)
+		Bitmap.new(column, row)
+	end
+
+	def column
+		args[0]
+	end
+
+	def row
+		args[1]
 	end
 
 	def verify_parameters
