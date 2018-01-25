@@ -5,14 +5,8 @@ class ShowBitmapCommand < BitmapCommand
 	def process(bitmap)
 		verify_parameters(bitmap)
 
-		string_bitmap = ''
-		(bitmap.rows).times do |row|
-			(bitmap.columns).times do |column|
-				string_bitmap += bitmap[row, column].to_s
-			end
-			string_bitmap += "\n"
+		bitmap.get.each do |row|
+			puts row.join
 		end
-
-		puts string_bitmap
 	end
 end
