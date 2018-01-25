@@ -5,6 +5,7 @@ require_relative 'fill_pixel_command'
 require_relative 'vertical_fill_command'
 require_relative 'horizontal_fill_command'
 require_relative 'clear_bitmap_command'
+require_relative 'show_bitmap_command'
 require 'pp'
 
 class BitmapEditor
@@ -17,7 +18,7 @@ class BitmapEditor
 
   def run
     @commands.inject(nil) do |bitmap, command|
-      pp command.process(bitmap)
+      command.process(bitmap)
     end
   end
 
@@ -41,7 +42,7 @@ class BitmapEditor
       'L' => FillPixelCommand,
       'V' => VerticalFillCommand,
       'H' => HorizontalFillCommand,
-      'S' => 'S'
+      'S' => ShowBitmapCommand
     }
   end
 end

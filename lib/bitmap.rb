@@ -19,6 +19,10 @@ class Bitmap
 		(@bitmap[row.to_i - 1][column.to_i - 1] = value || raise(OutOfBoundsPixel))
 	end
 
+	def get
+		bitmap
+	end
+
 	private
 
 	def create_bitmap
