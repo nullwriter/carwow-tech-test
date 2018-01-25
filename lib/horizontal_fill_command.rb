@@ -30,6 +30,7 @@ class HorizontalFillCommand < BitmapCommand
 	end
 
 	def verify_parameters(bitmap)
+		super
 		raise IncompleteCommand if not (args[0] && args[1] && args[2] && args[3])
 		raise IncorrectParameter if not (is_number?(args[0]) && is_number?(args[1]) && is_number?(args[2]))
 		# from_column must be lower than to_column

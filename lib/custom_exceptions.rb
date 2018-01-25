@@ -27,3 +27,9 @@ class IncorrectParameter < StandardError
 		super
 	end
 end
+
+class NoBitmapCreated < StandardError
+  def initialize(msg="Can't process command if no Bitmap has been created first.")
+    super
+  end
+end

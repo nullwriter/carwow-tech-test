@@ -21,5 +21,4 @@ class DrawBitmapCommand < BitmapCommand
 		raise IncorrectParameter if not (is_number?(args[0]) && is_number?(args[1]))
 		raise OutOfBoundsPixel if args[1].to_i < 0 || args[0].to_i < 0
 	end
-
 end

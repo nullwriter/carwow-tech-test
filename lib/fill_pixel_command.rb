@@ -22,10 +22,10 @@ class FillPixelCommand < BitmapCommand
 	end
 
 	def verify_parameters(bitmap)
+		super
 		raise IncompleteCommand if not (args[2] && args[1] && args[0])
 		raise IncorrectParameter if not (is_number?(args[1]) && is_number?(args[0]))
 		raise OutOfBoundsPixel if args[0].to_i > bitmap.columns || args[1].to_i > bitmap.rows
 		raise OutOfBoundsPixel if args[1].to_i < 0 || args[0].to_i < 0
 	end
-
 end
