@@ -31,7 +31,7 @@ class BitmapEditor
 
       parts = line.strip.split
       cmd, *args = parts
-      @commands << (command_list[cmd].new(args) || raise(CommandNotFound))
+      @commands << (command_list[cmd.upcase].new(args) || raise(CommandNotFound))
     end
   end
 
